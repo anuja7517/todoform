@@ -1,0 +1,24 @@
+<h3  class="alert alert-dark">Std Table</h3>
+<form [formGroup]="todoform" (ngSubmit)="onsumit()">
+    <div class="form-group">
+        <label for="fname"> std fname</label>
+        <input type="text" formControlName="fname" id="fname" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="lname"> std lname</label>
+        <input type="text" formControlName="lname" id="lname" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="email"> std Email</label>
+        <input type="text"  formControlName="email" id="email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="contact"> std Contact</label>
+        <input type="text" formControlName="contact" id="contact" class="form-control">
+    </div>
+    <button [disabled]="todoform.invalid" *ngIf="!isIneditmode"  class="btn btn-outline-primary btn-block">Add stdent</button>
+    <button [disabled]="todoform.invalid" type="button"  (click)="onudate()"
+    
+    *ngIf="isIneditmode" class="btn btn-outline-primary btn-block">update stdent</button>
+
+</form>

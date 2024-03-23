@@ -1,0 +1,45 @@
+
+
+<div class="table-responsive">
+    <table class="table table-bordered" *ngIf="stdDate.length > 0; else noStdata">
+        <thead>
+            <tr>
+                <th>Sr.no</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>contact</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let stds of stdDate;  index  as i">
+                <td>{{i +1}}</td>
+                <td>{{stds.fname}}</td> 
+                <td>{{stds.lname}}</td>
+                <td>{{stds.email}}</td>
+                <td>{{stds.contact}}</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="onEdit(stds)">Edit</button>
+                     </td>
+                   
+
+                     <td>
+                        <button class="btn btn-danger" (click)="onstddelte(stds)">Delete</button>
+    
+                     </td>
+    
+    
+    
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #noStdata>
+    <p class="alert alert-info" *ngIf="stdDate.length === 0">
+        No student is added yet !!!
+    </p>
+
+</ng-template>
